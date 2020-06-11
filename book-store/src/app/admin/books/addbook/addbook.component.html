@@ -1,0 +1,17 @@
+<h1>Add Book Admin</h1>
+<form>
+    <label for="name"></label><br>
+    <input type="text" id="name" [(ngModel)]="book.name" name="name"><br>
+
+    <label for="author"></label><br>
+    <input type="text" id="author" [(ngModel)]="book.author" name="author"><br>
+
+    <label for="price"></label><br>
+    <input type="text" id="price" [(ngModel)]="book.price" name="price">
+
+    <br>    
+    <input type="file" (change)="onFileChanged($event)"><br>
+    <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+    <br>
+    <button type="button" class="button" (click)="saveBook()">Save Book</button>
+</form>

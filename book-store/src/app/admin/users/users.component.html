@@ -1,0 +1,26 @@
+<h1>User Admin</h1>
+<div>
+<a class="button" (click)="addUser()">add</a>
+</div>
+<br>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td><button type="submit" (click)="viewUser(user.id)">Show Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <app-addusers *ngIf="action==='add'" [user]="selectedUser" (userAddedEvent)="refreshData()"></app-addusers>
+        <app-viewuser *ngIf="action==='view'" [user]="selectedUser" (userDeletedEvent)="refreshData()"></app-viewuser>
+    </div>
+</div>

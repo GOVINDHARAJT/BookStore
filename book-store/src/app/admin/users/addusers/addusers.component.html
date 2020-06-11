@@ -1,0 +1,13 @@
+<h1>Add User</h1>
+<form #receivedUser="ngForm">
+    <label for="name">Name</label><br>
+    <input type="text" id = "name" [(ngModel)]="user.name" name="name"><br><br>
+
+    <label for="type">Type</label><br>
+    <input type="text" id = "password" [(ngModel)]="user.type" name="type"><br><br>
+
+    <label for="password">Password</label><br>
+    <input type="password" id = "password" [(ngModel)]="user.password" name="password"><br><br>
+    
+    <button type="button" class="button" (click)="addUser()">Save</button>
+</form>

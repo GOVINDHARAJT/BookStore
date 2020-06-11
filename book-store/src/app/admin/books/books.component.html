@@ -1,0 +1,28 @@
+<h1>Books Admin</h1>
+<div>
+    <a class="button" (click)="addBook()">Add New Book</a>
+</div>
+<br>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr *ngFor="let book of books">
+                    <td>{{book.id}}</td>
+                    <td>{{book.name}}</td>
+                    <td>
+                        <button type="button" class="button" (click)="setBook(book.id)">Show Details</button>
+                    </td>
+                </tr>
+            </tbody>
+      
+    </table>
+    <div>
+        <app-addbook *ngIf="action==='add'" [book]="selectedBook" (bookAddedEvent)="refreshData()"></app-addbook>
+    </div>
+</div>
